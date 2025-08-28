@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Metal+Mania&family=Ms+Madi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Metal+Mania&family=Ms+Madi&display=swap');
+
+.figtree {
+  font-family: "Figtree", Figtree-Fallback,sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* Change to 300, 500, 600, etc. as needed */
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0b0d0e;
+  color: #f5f5f5;
+  font-family: "Doto", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  min-width: 90vw;
+  padding-top: 60px;
+}
+
+/* Headings & Hero text */
+h1, .Azaki, .azaki, .hey {
+  color: #f1f1f1;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.Azaki {
+  font-weight: 700;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: left;
+}
+
+.azaki {
+  display: inline-block;
+  font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+  text-transform: uppercase;
+  color: #aaa;
+  margin-left: 8px;
+}
+
+.hey {
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  font-weight: 600;
+  color: #999;
+  margin-top: 4px;
+}
+
+/* Containers */
+.azaki-container {
+  text-align: left;
+  margin-top: 8px;
+}
+
+.para {
+  margin-top: 0.8rem;
+  color: #e0e0e0;
+  font-size: 0.85rem;
+  max-width: 360px;
+  text-align: justify;
+  line-height: 1.6;
+  opacity: 0.9;
+  font-family: "Figtree", Figtree-Fallback,sans-serif;
+}
+
+/* Buttons */
+.btns {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.btns button, .hire-btn, .email-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  background: #1a1a1a;
+  color: white;
+  border: 1px solid #000;
+  padding: 8px 16px;
+  height: 32px;
+  font-size: 12px;
+  box-shadow: 
+    0px 32px 64px -16px rgba(0,0,0,0.3),
+    0px 16px 32px -8px rgba(0,0,0,0.3),
+    0px 8px 16px -4px rgba(0,0,0,0.24),
+    0px 4px 8px -2px rgba(0,0,0,0.24),
+    0px -8px 16px -1px rgba(0,0,0,0.16),
+    0px 2px 4px -1px rgba(0,0,0,0.24),
+    0px 0px 0px 1px #000,
+    inset 0px 0px 0px 1px rgba(255,255,255,0.08),
+    inset 0px 1px 0px rgba(255,255,255,0.2);
+}
+
+.btns button:hover, .hire-btn:hover, .email-btn:hover {
+  background: #2a2a2a;
+  transform: translateY(-1px);
+}
+
+.or-text {
+  color: #aaa;
+  font-size: 0.85rem;
+}
+
+/* Flow diagram */
+.flow {
+  margin: 40px 0 0;
+  display: grid;
+  grid-template-columns: repeat(6, 180px);
+  grid-template-rows: 100px;
+  gap: 0 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  position: relative;
+  font-family: "Figtree", Figtree-Fallback, sans-serif;
+}
+
+/* Flow Buttons */
+.flow-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  background: #1a1a1a;
+  color: white;
+  border: 1px solid #000;
+  padding: 4px 8px;
+  height: 32px;
+  width: 65%;
+  font-size: 12px;
+  font-family: "Figtree", Figtree-Fallback, sans-serif;
+    box-shadow: 
+    0px 32px 64px -16px rgba(0,0,0,0.3),
+    0px 16px 32px -8px rgba(0,0,0,0.3),
+    0px 8px 16px -4px rgba(0,0,0,0.24),
+    0px 4px 8px -2px rgba(0,0,0,0.24),
+    0px -8px 16px -1px rgba(0,0,0,0.16),
+    0px 2px 4px -1px rgba(0,0,0,0.24),
+    0px 0px 0px 1px #000,
+    inset 0px 0px 0px 1px rgba(255,255,255,0.08),
+    inset 0px 1px 0px rgba(255,255,255,0.2);
+  position: relative;
+  z-index: 1;
+}
+
+.flow-btn:hover {
+  background: #2a2a2a;
+  transform: translateY(-1px);
+}
+
+/* Horizontal connectors */
+.flow-btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -21px;
+  width: 20px;
+  height: 2px;
+  background: repeating-linear-gradient(
+    to right,
+    #777 0 4px,
+    transparent 4px 8px
+  );
+  animation: move 2s linear infinite;
+}
+
+.flow-btn:last-child::after {
+  display: none;
+}
+
+/* Button Icons */
+.btn-icon {
+  width: 24px;
+  height: 20px;
+  gap: 8px;
+  filter: brightness(0) invert(1);
+}
+ 
+/* Animations */
+@keyframes move {
+  from { background-position: 0 0; }
+  to { background-position: 16px 0; }
+}
+
+@keyframes movex {
+  from { background-position: 0 0; }
+  to { background-position: 0 16px; }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 15px rgba(0,255,174,0.5); }
+  50% { box-shadow: 0 0 30px rgba(0,255,174,0.9); }
+  100% { box-shadow: 0 0 15px rgba(0,255,174,0.5); }
+}
+
+/* Heatmap */
+.heatmap-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+/* COMIT II Section */
+.comit-section {
+  margin-top: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.comit-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #f1f1f1;
+  margin-bottom: 20px;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+.commits-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.commit-item {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 16px;
+  transition: all 0.2s ease;
+  box-shadow: 
+    0px 4px 8px -2px rgba(0,0,0,0.24),
+    0px 2px 4px -1px rgba(0,0,0,0.24),
+    inset 0px 0px 0px 1px rgba(255,255,255,0.05);
+}
+
+.commit-item:hover {
+  background: #222;
+  border-color: #444;
+  transform: translateY(-1px);
+}
+
+.commit-hash {
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  color: #00ff7f;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.commit-message {
+  font-size: 0.9rem;
+  color: #e0e0e0;
+  font-weight: 500;
+  margin-bottom: 6px;
+  font-family: "Figtree", Figtree-Fallback, sans-serif;
+}
+
+.commit-date {
+  font-size: 0.75rem;
+  color: #999;
+  font-family: "Figtree", Figtree-Fallback, sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .flow {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 60px);
+    gap: 20px;
+    max-width: 90vw;
+  }
+  
+  .flow-btn::after {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+  
+  .flow {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 50px);
+    gap: 15px;
+    margin-top: 40px;
+  }
+  
+  .flow-btn {
+    height: 36px;
+    font-size: 11px;
+    padding: 6px 8px;
+  }
+  
+  .btns {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+  
+  .btns button {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .or-text {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .comit-section {
+    margin-top: 30px;
+    padding: 0 20px;
+  }
+  
+  .commit-item {
+    padding: 12px;
+  }
+  
+  .commit-message {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .flow {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 45px);
+    gap: 10px;
+  }
+  
+  .flow-btn {
+    height: 34px;
+    font-size: 10px;
+  }
+  
+  .btn-icon {
+    width: 18px;
+    height: 16px;
+  }
+  
+  .para {
+    font-size: 0.8rem;
+  }
+  
+  .comit-section {
+    margin-top: 25px;
+    padding: 0 15px;
+  }
+  
+  .comit-title {
+    font-size: 1rem;
+  }
+  
+  .commit-item {
+    padding: 10px;
+  }
+  
+  .commit-hash {
+    font-size: 0.7rem;
+  }
+  
+  .commit-message {
+    font-size: 0.8rem;
+  }
+  
+  .commit-date {
+    font-size: 0.7rem;
+  }
+}
