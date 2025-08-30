@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import './Page.css'
 import DiscordIcon from './Icons/discord-logo-duotone-svgrepo-com.svg'
 import TwitterIcon from './Icons/twitter-logo-duotone-svgrepo-com.svg'
@@ -7,110 +8,187 @@ import YoutubeIcon from './Icons/youtube-logo-duotone-svgrepo-com.svg'
 import DocsIcon from './Icons/brain-duotone-svgrepo-com.svg'
 import BookmarkIcon from './Icons/linkedin-logo-duotone-svgrepo-com.svg'
 import EmailIcon from './Icons/globe-hemisphere-east-duotone-svgrepo-com.svg'
+import monkeyImg from './Icons/monkey.png'
+import mitosisPng from './Icons/mitosis.png'
+import overtakePng from './Icons/overtake.png'
+import fhensPng from './Icons/fhenix.png' 
+import XocietyPng from './Icons/xociety.png' 
 
-
-const colors = ['#ebedf0', '#29412dff', '#3b483fff', '#171a17ff', '#000000ff'];
-
-const generateContributions = () => {
-  const contributions = [];
-  for (let week = 0; week < 53; week++) {
-    for (let day = 0; day < 7; day++) {
-      contributions.push({
-        week,
-        day,
-        level: Math.floor(Math.random() * 5)
-      });
-    }
-  }
-  return contributions;
-};
+const SOCIAL_LINKS = [
+  { icon: TwitterIcon, name: 'Twitter', url: 'https://x.com/nuzzio' },
+  { icon: TelegramIcon, name: 'Telegram', url: 'https://t.me/airdropsdetectives' },
+  { icon: DiscordIcon, name: 'Discord', url: 'https://discord.gg/B8uexGhywn' },
+  { icon: YoutubeIcon, name: 'Youtube', url: 'https://www.youtube.com/@nuzzio' },
+  { icon: DocsIcon, name: 'Docs', url: 'https://defizo.xyz/' }
+];
 
 const Page = () => {
-  const contributions = generateContributions();
+  const navigate = useNavigate();
 
   return (
-    <div className="Father">
-      {/* Intro Section */}
-      <div className="Son">
-        <h1 className="hey">Hey It's Me</h1>
-        <div className="azaki-container">
-          <h1 className="Azaki">AZAKI</h1>
-          <h1 className="azaki">/@azaki</h1>
+    <main className="container">
+      {/* Hero Section */}
+      <section className="hero">
+        <img src={monkeyImg} alt="Monkey" className="hero-monkey" />
+        <p className="greeting">Hey It's Me</p>
+        <div className="name-container">
+          <h1 className="name-primary">Nuzzio</h1>
+          <span className="name-handle" onClick={() => navigate('/@nuzzio')}>/@nuzzio</span>
         </div>
-
-        <p className="para">
-          Yup! I'm a Design Engineer. Big deal, right? But wait—there's more!
-          I'm not just any developer,<br />I'm a Full Stack Developer.
-          And if that wasn't enough, guess what?<br />maybe Freelancer? Oh yeah,
-          I've got that badge too!<br />I love both Design & Development.
-          so, That means I can create beautiful and functional websites.
-          I'm always looking for new opportunities to learn and grow.
+        <p className="bio">
+          Yup! I'm a <span className="highlight">Design Engineer</span>. Big deal, right? But wait — there's more! I'm not just any developer,<br />
+          I'm a <span className="highlight">Full Stack Developer</span>. And if that wasn't enough, guess what?<br />
+          maybe <span className="highlight">Freelancer</span>? Oh yeah, I've got that badge too!
         </p>
-      </div>
+        <p className="bio-2">
+          I love both <span className="highlight">Design & Development</span>. so, That means I can <br />create beautiful and functional websites. I'm always looking <br />for new opportunities to learn and grow.
+        </p>
+      </section>
 
-      {/* Buttons */}
-      <div className="btns">
-        <button className="hire-btn">
-          <img src={BookmarkIcon} alt="Bookmark" className="btn-icon" />
+      {/* Action Buttons */}
+      <section className="actions">
+        <button className="btn btn-primary">
+          <img src={BookmarkIcon} alt="" className="btn-icon" />
           Available for Hire
         </button>
-        <span className="or-text">or</span>
-        <button className="email-btn">
-          <img src={EmailIcon} alt="Email" className="btn-icon" />
+        <span className="divider">or</span>
+        <button className="btn btn-secondary">
+          <img src={EmailIcon} alt="" className="btn-icon" />
           Email Me
         </button>
-      </div>
+      </section>
 
-      {/* Flow Diagram */}
-      <div className="flow">
-        <button className="flow-btn">
-          <img src={DiscordIcon} alt="Discord" className="btn-icon" />
-          Discord
-        </button>
-        <button className="flow-btn">
-          <img src={TwitterIcon} alt="Twitter" className="btn-icon" />
-          Twitter
-        </button>
-        <button className="flow-btn">
-          <img src={TelegramIcon} alt="Telegram" className="btn-icon" />
-          Telegram
-        </button>
-        <button className="flow-btn">
-          <img src={YoutubeIcon} alt="Youtube" className="btn-icon" />
-          Youtube
-        </button>
-        <button className="flow-btn">
-          <img src={DocsIcon} alt="Docs" className="btn-icon" />
-          Docs
-        </button>
-      </div>
+     
 
-      {/* Heatmap Section */}
-      <div className="heatmap-container">
-          <svg width={53 * 13} height={7 * 13}>
-            {contributions.map((c, i) => (
-              <rect
-                key={i}
-                x={c.week * 13}
-                y={c.day * 13}
-                width={11}
-                height={11}
-                rx={2}
-                ry={2}
-                fill={colors[c.level]}
-                className="heatmap-cell"
-              >
-                <title>
-                  Week {c.week + 1}, Day {c.day + 1} → Level {c.level}
-                </title>
-              </rect>
-            ))}
-          </svg>
+      {/* Social Links */}
+      <section className="social-section">
+        <p className="bio3">You can check these links if you wish to</p>
+        <div className="social-grid">
+          {SOCIAL_LINKS.map((link, index) => (
+            <button key={index} className="social-btn" onClick={() => window.open(link.url, '_blank')}>
+              <img src={link.icon} alt="" className="btn-icon" />
+              {link.name}
+            </button>
+          ))}
         </div>
+      </section>
 
- 
+      <div className='projects-div'>
+        <span className='projects-text'>Live Projects</span>
+        <div className='projects-container'>
+            <div className='project-card'>
+              <div className='corner-br'></div>
+              <div className='corner-bl'></div>
+              <img src={overtakePng} alt="overtake" />
+              <div className='project-info'>
+                <h3>OVERTAKE</h3>
+                <p>Web3 gaming platform with NFT integration</p>
+              </div>
+            </div>
+            <div className='project-card'>
+              <div className='corner-br'></div>
+              <div className='corner-bl'></div>
+              <img src={XocietyPng} alt="xociety" />
+              <div className='project-info'>
+                <h3>XOCIETY</h3>
+                <p>Social media analytics dashboard</p>
+              </div>
+            </div>
+            <div className='project-card'>
+              <div className='corner-br'></div>
+              <div className='corner-bl'></div>
+              <img src={fhensPng} alt="fhenix" />
+              <div className='project-info'>
+                <h3>FHENIX</h3>
+                <p>Privacy-focused messaging application</p>
+              </div>
+            </div>
+            <div className='project-card'>
+              <div className='corner-br'></div>
+              <div className='corner-bl'></div>
+              <img src={mitosisPng} alt="mitosis" />
+              <div className='project-info'>
+                <h3>MITOSIS</h3>
+                <p>Decentralized finance dashboard</p>
+              </div>
+            </div>
+        </div>
       </div>
-   
+
+      {/* Timeline Section */}
+      <section className="timeline-section">
+        <p className='bio4'>Journey</p>
+        <div className="timeline">
+          <div className="timeline-line"></div>
+          <div className="timeline-item">
+            <div className="timeline-dot">
+              <div className="dot-inner"></div>
+            </div>
+            <div className="timeline-content">
+              <p className="timeline-title">Started Coding</p>
+              <p className="timeline-date">Jan 2020</p>
+            </div>
+          </div>
+          <div className="timeline-item">
+            <div className="timeline-dot">
+              <div className="dot-inner"></div>
+            </div>
+            <div className="timeline-content">
+              <p className="timeline-title">First Web Project</p>
+              <p className="timeline-date">Jun 2020</p>
+            </div>
+          </div>
+          <div className="timeline-item">
+            <div className="timeline-dot">
+              <div className="dot-inner"></div>
+            </div>
+            <div className="timeline-content">
+              <p className="timeline-title">Full Stack Developer</p>
+              <p className="timeline-date">Dec 2021</p>
+            </div>
+          </div>
+          <div className="timeline-item">
+            <div className="timeline-dot">
+              <div className="dot-inner"></div>
+            </div>
+            <div className="timeline-content">
+              <p className="timeline-title">Freelance Work</p>
+              <p className="timeline-date">Mar 2022</p>
+            </div>
+          </div>
+          <div className="timeline-item">
+            <div className="timeline-dot">
+              <div className="dot-inner"></div>
+            </div>
+            <div className="timeline-content">
+              <p className="timeline-title">Design Engineer</p>
+              <p className="timeline-date">Present</p>
+            </div>
+          </div>
+          <div className="timeline-item" onClick={() => navigate('/work')} style={{cursor: 'pointer'}}>
+            <div className="timeline-dot">
+              <div className="dot-inner"></div>
+            </div>
+            <div className="timeline-content">
+              <p className="timeline-title">Work</p>
+              <p className="timeline-date">View All</p>
+            </div>
+          </div>
+          <div className="timeline-arrow">
+            <span className="arrow-text">Future Goals</span>
+            <span className="arrow-icon">→</span>
+          </div>
+
+        </div>
+      </section>
+      <footer className="footer">
+        <p className="footer-text">Made with ❤️ by Nuzzio</p>
+      </footer>
+    </main>
+
+    
+
+  
   )
 }
 

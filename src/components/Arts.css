@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+.arts-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100dvh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  max-height: 100vh;
+}
+
+.arts-title {
+  font-family: "Doto", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #f1f1f1;
+  text-align: center;
+  margin: 20px 0 40px 0;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.arts-content {
+  width: 100%;
+}
+
+.arts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  width: 100%;
+}
+
+.art-card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0px 32px 64px -16px rgba(0,0,0,0.3),
+    0px 16px 32px -8px rgba(0,0,0,0.3),
+    0px 8px 16px -4px rgba(0,0,0,0.24),
+    0px 4px 8px -2px rgba(0,0,0,0.24),
+    0px -8px 16px -1px rgba(0,0,0,0.16),
+    0px 2px 4px -1px rgba(0,0,0,0.24),
+    0px 0px 0px 1px #000,
+    inset 0px 0px 0px 1px rgba(255,255,255,0.08),
+    inset 0px 1px 0px rgba(255,255,255,0.2);
+}
+
+.art-card:hover {
+  transform: translateY(-5px);
+  border-color: #555;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.art-media-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.art-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  background: #000;
+}
+
+.art-card:hover .art-media {
+  transform: scale(1.05);
+}
+
+/* Video specific styles */
+.art-media::-webkit-media-controls {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+
+.art-media::-webkit-media-controls-panel {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.art-info {
+  padding: 15px;
+}
+
+.art-title {
+  color: #f1f1f1;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  font-family: "Figtree", sans-serif;
+}
+
+.art-description {
+  color: #999;
+  font-size: 0.9rem;
+  margin: 0;
+  font-family: "Figtree", sans-serif;
+  line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .arts-title {
+    font-size: 2rem;
+    margin: 15px 0 30px 0;
+  }
+  
+  .arts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  
+  .art-media-container {
+    height: 200px;
+  }
+  
+  .art-title {
+    font-size: 1.1rem;
+  }
+  
+  .art-description {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .arts-container {
+    padding: 15px 10px;
+  }
+  
+  .arts-title {
+    font-size: 1.8rem;
+    margin: 10px 0 20px 0;
+  }
+  
+  .arts-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .art-media-container {
+    height: 250px;
+  }
+}

@@ -7,10 +7,15 @@
 }
 
 .radio-section {
-  --col-orange: #d17842;
+  
   --col-dark: #0c0f14;
   --col-darkGray: #52555a;
   --col-gray: #aeaeae;
+  --home-color: #4285f4;
+  --work-color: #34a853;
+  --arts-color: #f9ab00;
+  --skills-color: #ea4335;
+  --blogs-color: #2799aa;
 
   width: fit-content;
   display: flex;
@@ -22,24 +27,103 @@
 }
 
 .radio-label {
-  padding: 8px 18px;
-  transition: all 200ms;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(6px, 1.5vw, 8px);
+  white-space: nowrap;
+  border-radius: clamp(4px, 1vw, 6px);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  background: #1a1a1a;
+  color: white;
+  padding: clamp(6px, 1.5vw, 8px) clamp(12px, 3vw, 16px);
+  height: clamp(28px, 6vw, 32px);
+  font-size: clamp(10px, 2vw, 12px);
+  font-family: "Figtree", sans-serif;
+  box-shadow: 
+    0px 32px 64px -16px rgba(0,0,0,0.3),
+    0px 16px 32px -8px rgba(0,0,0,0.3),
+    0px 8px 16px -4px rgba(0,0,0,0.24),
+    0px 4px 8px -2px rgba(0,0,0,0.24),
+    0px -8px 16px -1px rgba(0,0,0,0.16),
+    0px 2px 4px -1px rgba(0,0,0,0.24),
+    0px 0px 0px 1px #000,
+    inset 0px 0px 0px 1px rgba(255,255,255,0.08),
+    inset 0px 1px 0px rgba(255,255,255,0.2);
+  position: relative;
+}
+
+.radio-label:hover {
+  background: #2a2a2a;
+  transform: translateY(-1px);
 }
 
 .radio-label input[type="radio"] {
   display: none;
 }
 
-.radio-label > svg {
-  transition: all 200ms;
-  fill: var(--col-gray);
-  width: 14px;
+.radio-icon {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+  transition: all 0.2s ease;
 }
 
-.radio-label:hover:not(:has(input:checked)) > svg {
-  fill: #d17842;
-  opacity: 0.6;
+/* Home Icon Colors */
+.radio-label[for="home"]:hover .radio-icon {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(70%) saturate(1800%) hue-rotate(195deg) brightness(95%) contrast(101%);
+  transform: scale(0.9);
+}
+
+.radio-label[for="home"]:has(input:checked) .radio-icon {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(70%) saturate(1800%) hue-rotate(195deg) brightness(95%) contrast(101%);
+  transform: scale(1.1);
+}
+
+/* Work Icon Colors */
+.radio-label[for="work"]:hover .radio-icon {
+  filter: brightness(0) saturate(100%) invert(55%) sepia(60%) saturate(1200%) hue-rotate(85deg) brightness(95%) contrast(101%);
+  transform: scale(0.9);
+}
+
+.radio-label[for="work"]:has(input:checked) .radio-icon {
+  filter: brightness(0) saturate(100%) invert(55%) sepia(60%) saturate(1200%) hue-rotate(85deg) brightness(95%) contrast(101%);
+  transform: scale(1.1);
+}
+
+/* Arts Icon Colors */
+.radio-label[for="arts"]:hover .radio-icon {
+  filter: brightness(0) saturate(100%) invert(80%) sepia(70%) saturate(800%) hue-rotate(345deg) brightness(95%) contrast(101%);
+  transform: scale(0.9);
+}
+
+.radio-label[for="arts"]:has(input:checked) .radio-icon {
+  filter: brightness(0) saturate(100%) invert(80%) sepia(70%) saturate(800%) hue-rotate(345deg) brightness(95%) contrast(101%);
+  transform: scale(1.1);
+}
+
+/* Skills Icon Colors */
+.radio-label[for="skills"]:hover .radio-icon {
+  filter: brightness(0) saturate(100%) invert(40%) sepia(80%) saturate(1500%) hue-rotate(320deg) brightness(95%) contrast(101%);
+  transform: scale(0.9);
+}
+
+.radio-label[for="skills"]:has(input:checked) .radio-icon {
+  filter: brightness(0) saturate(100%) invert(40%) sepia(80%) saturate(1500%) hue-rotate(320deg) brightness(95%) contrast(101%);
+  transform: scale(1.1);
+}
+
+/* Blogs Icon Colors */
+.radio-label[for="blogs"]:hover .radio-icon {
+  filter: brightness(0) saturate(100%) invert(70%) sepia(90%) saturate(700%) hue-rotate(180deg) brightness(95%) contrast(101%);
+  transform: scale(0.9);
+}
+
+.radio-label[for="blogs"]:has(input:checked) .radio-icon {
+  filter: brightness(0) saturate(100%) invert(70%) sepia(90%) saturate(700%) hue-rotate(180deg) brightness(95%) contrast(101%);
+  transform: scale(1.1);
 }
 
 .radio-label::before {
@@ -48,27 +132,92 @@
   width: 0%;
   height: 2px;
   border-radius: 5px;
-  position: relative;
+  position: absolute;
   left: 50%;
-  top: 20px;
+  bottom: -5px;
   background: var(--col-orange);
   transition: all 200ms;
-}
-
-.radio-label > svg {
-  transition: 300ms;
-  fill: var(--col-darkGray);
-  margin-top: 0;
-}
-
-.radio-label:has(input:checked) > svg {
-  fill: var(--col-orange);
-  scale: 1.2;
-  margin-top: -5px;
 }
 
 .radio-label:has(input:checked)::before {
   width: 100%;
   left: 0;
-  top: 25px;
+}
+
+/* Tooltip */
+.tooltip {
+  visibility: hidden;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  padding: 4px 8px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 12px;
+  font-family: "Figtree", sans-serif;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #000 transparent transparent transparent;
+}
+
+.radio-label:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .radio-wrapper {
+    width: 90%;
+    max-width: 300px;
+  }
+  
+  .radio-section {
+    width: 100%;
+    justify-content: space-around;
+  }
+  
+  .radio-label {
+    padding: 6px 12px;
+  }
+  
+  .radio-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .radio-wrapper {
+    bottom: 10px;
+  }
+  
+  .radio-label {
+    padding: 5px 10px;
+  }
+  
+  .radio-icon {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .tooltip {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
 }

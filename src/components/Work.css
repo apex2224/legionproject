@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+body {
+  background-color: #0a0a0a;
+  margin: 0;
+  padding: 0;
+}
+
+.work-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 6rem 2rem 4rem;
+  min-height: 100vh;
+  background-color: #0a0a0a;
+  color: #ffffff;
+}
+
+/* Header Styles */
+.work-header {
+  margin-bottom: 4rem;
+  text-align: left;
+}
+
+.work-title {
+  font-family: 'doto', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+
+.work-subtitle {
+  font-family: 'doto', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #888888;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Work Experience Section */
+.work-experience {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  position: relative;
+}
+
+.job-card {
+  display: grid;
+  grid-template-columns: 60px 1fr auto;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 0;
+  font-family: "figtree", sans-serif;
+  border: none;
+  background: transparent;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Glowing line after each job card */
+.job-card:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: -1.5rem;
+  left: 30px;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 30%,
+    rgba(255, 255, 255, 0.4) 70%,
+    rgba(255, 255, 255, 0.8) 100%
+  );
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* Glowing animation */
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.6;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  }
+}
+
+/* Company Logo/Icon */
+.job-card::before {
+  content: '';
+  width: 50px;
+  height: 50px;
+  background: #333333;
+  border-radius: 8px;
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+/* Job Header */
+.job-header {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.job-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.company-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.3;
+  display: inline;
+}
+
+.job-role {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #888888;
+  margin: 0;
+  line-height: 1.4;
+  display: inline;
+}
+
+.job-meta {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.job-period,
+.job-location {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  background: #1a1a1a;
+  border: 1px solid #333333;
+  color: #888888;
+}
+
+.job-period {
+  background: #1a1a1a;
+  color: #888888;
+}
+
+.job-location {
+  background: #1a1a1a;
+  color: #888888;
+}
+
+/* Date on the right */
+.job-card .job-date {
+  grid-column: 3;
+  grid-row: 1;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #888888;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* Achievements */
+.job-achievements {
+  grid-column: 2 / span 2;
+  grid-row: 2;
+  margin-top: 1rem;
+}
+
+.achievements-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.achievement {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0;
+}
+
+.achievement-bullet {
+  color: #666666;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 0.125rem;
+  flex-shrink: 0;
+}
+
+.achievement-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #aaaaaa;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+/* Hover effects */
+.job-card:hover .company-name {
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.job-card:hover .achievement-text {
+  color: #cccccc;
+  transition: color 0.3s ease;
+}
+
+/* Enhanced glow on hover */
+.job-card:hover::after {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 30%,
+    rgba(255, 255, 255, 0.6) 70%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .work-container {
+    padding: 4rem 1.5rem 3rem;
+    max-width: 100%;
+  }
+  
+  .job-card {
+    grid-template-columns: 40px 1fr;
+    gap: 1rem;
+  }
+  
+  .job-card::before {
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* Adjust glowing line for mobile */
+  .job-card:not(:last-child)::after {
+    left: 20px;
+  }
+  
+  .job-date {
+    grid-column: 2;
+    grid-row: 2;
+    text-align: left !important;
+    margin-top: 0.5rem;
+  }
+  
+  .job-achievements {
+    grid-column: 1 / span 2;
+    grid-row: 3;
+  }
+  
+  .job-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .company-name {
+    font-size: 1.125rem;
+  }
+  
+  .job-role {
+    font-size: 0.95rem;
+  }
+  
+  .achievement-text {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .work-container {
+    padding: 3rem 1rem 2rem;
+  }
+  
+  .job-card {
+    gap: 0.75rem;
+  }
+  
+  .work-header {
+    margin-bottom: 3rem;
+  }
+  
+  .work-experience {
+    gap: 2.5rem;
+  }
+  
+  /* Adjust glowing line for small mobile */
+  .job-card:not(:last-child)::after {
+    left: 15px;
+  }
+}
+
+/* Smooth animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.job-card {
+  animation: fadeInUp 1s ease-out;
+  animation-fill-mode: both;
+}
+
+.job-card:nth-child(1) { animation-delay: 0.1s; }
+.job-card:nth-child(2) { animation-delay: 0.2s; }
+.job-card:nth-child(3) { animation-delay: 0.3s; }
+.job-card:nth-child(4) { animation-delay: 0.4s; }
+.job-card:nth-child(5) { animation-delay: 0.5s; }
+
+/* Animate the glowing line appearance */
+.job-card:not(:last-child)::after {
+  animation-delay: calc(var(--card-index, 0) * 0.1s + 0.8s);
+  animation: glowLineAppear 1s ease-out forwards, glowPulse 3s ease-in-out infinite;
+  animation-delay: calc(var(--card-index, 0) * 0.1s + 0.8s), calc(var(--card-index, 0) * 0.1s + 1.8s);
+}
+
+@keyframes glowLineAppear {
+  from {
+    background: linear-gradient(
+      50%,
+      transparent 0%,
+      transparent 100%
+    );
+    opacity: 0;
+  }
+  to {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.1) 30%,
+      rgba(255, 255, 255, 0.4) 70%,
+      rgba(255, 255, 255, 0.8) 100%
+    );
+    opacity: 0.6;
+  }
+}
+
+/* Selection styles */
+::selection {
+  background-color: rgba(246, 250, 255, 0.964);
+  color: #ffffff;
+}
+
+/* Focus styles for accessibility */
+.job-card:focus-within {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}

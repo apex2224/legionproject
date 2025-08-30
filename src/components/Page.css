@@ -1,13 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Metal+Mania&family=Ms+Madi&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Metal+Mania&family=Ms+Madi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
 
-.figtree {
-  font-family: "Figtree", Figtree-Fallback,sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400; /* Change to 300, 500, 600, etc. as needed */
-  font-style: normal;
-}
+
 
 * {
   margin: 0;
@@ -19,85 +12,118 @@ body {
   color: #f5f5f5;
   font-family: "Doto", sans-serif;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  height: 100vh;
-  min-width: 90vw;
-  padding-top: 60px;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: clamp(20px, 5vw, 60px) clamp(10px, 3vw, 20px);
+  overflow-x: hidden;
 }
 
-/* Headings & Hero text */
-h1, .Azaki, .azaki, .hey {
-  color: #f1f1f1;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
+/* Main Container */
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
 }
 
-.Azaki {
-  font-weight: 700;
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
-  text-transform: uppercase;
-  display: inline-block;
+/* Hero Section */
+.hero {
   text-align: left;
+  margin-bottom: clamp(20px, 5vw, 32px);
+  position: relative;
 }
 
-.azaki {
-  display: inline-block;
-  font-size: clamp(0.7rem, 1.5vw, 0.9rem);
-  text-transform: uppercase;
-  color: #aaa;
-  margin-left: 8px;
+.hero-monkey {
+  position: absolute;
+  top: -40px;
+  right: 120px;
+  width: clamp(200px, 35vw, 300px);
+  height: 150%;
+  opacity: 0.8;
+  transform: scaleX(-1);
 }
 
-.hey {
+.greeting {
   font-size: clamp(0.8rem, 1.5vw, 1rem);
   font-weight: 600;
   color: #999;
-  margin-top: 4px;
+  margin: 0 0 8px 0;
 }
 
-/* Containers */
-.azaki-container {
-  text-align: left;
-  margin-top: 8px;
+.name-container {
+  margin: clamp(6px, 1.5vw, 8px) 0 clamp(12px, 3vw, 16px) 0;
 }
 
-.para {
-  margin-top: 0.8rem;
-  color: #e0e0e0;
-  font-size: 0.85rem;
-  max-width: 360px;
-  text-align: justify;
-  line-height: 1.6;
+.name-primary {
+  font-weight: 700;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  text-transform: uppercase;
+  color: #f1f1f1;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  display: inline-block;
+}
+
+.name-handle {
+  font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+  text-transform: uppercase;
+  color: #aaa;
+  margin-left: clamp(6px, 1.5vw, 8px);
+}
+
+.bio , .bio3 , .bio4 , .projects-text {
+  color: #8c8c8c;
+  font-size: clamp(0.75rem, 2vw, 0.85rem);
+  max-width: 100%;
+  line-height: clamp(1.4, 2vw, 1.6);
   opacity: 0.9;
-  font-family: "Figtree", Figtree-Fallback,sans-serif;
+  font-family: "Figtree", sans-serif;
+  margin: clamp(12px, 3vw, 16px) 0 0 0;
+  text-align: left;
+}
+.bio-2 {
+  color: #8c8c8c;
+  font-size: clamp(0.75rem, 2vw, 0.85rem);
+  max-width: 100%;
+  line-height: clamp(1.4, 2vw, 1.6);
+  opacity: 0.9;
+  font-family: "Figtree", sans-serif;
+  margin: clamp(12px, 3vw, 16px) 0 0 0;
+  text-align: left;
+}
+.bio3{
+  margin: clamp(12px, 3vw, 16px) 0 clamp(15px, 3vw, 20px) 0;
 }
 
-/* Buttons */
-.btns {
+/* Action Buttons */
+.actions {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 16px;
-  margin-top: 24px;
+  gap: clamp(12px, 3vw, 16px);
+  margin: clamp(20px, 4vw, 24px) 0;
+  flex-wrap: nowrap;
 }
 
-.btns button, .hire-btn, .email-btn {
+.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: clamp(6px, 1.5vw, 8px);
   white-space: nowrap;
-  border-radius: 6px;
+  border-radius: clamp(4px, 1vw, 6px);
   font-weight: 500;
   transition: all 0.2s ease;
   cursor: pointer;
   background: #1a1a1a;
   color: white;
   border: 1px solid #000;
-  padding: 8px 16px;
-  height: 32px;
-  font-size: 12px;
+  padding: clamp(6px, 1.5vw, 8px) clamp(12px, 3vw, 16px);
+  height: clamp(28px, 6vw, 32px);
+  font-size: clamp(10px, 2vw, 12px);
+  font-family: "Figtree", sans-serif;
   box-shadow: 
     0px 32px 64px -16px rgba(0,0,0,0.3),
     0px 16px 32px -8px rgba(0,0,0,0.3),
@@ -110,50 +136,60 @@ h1, .Azaki, .azaki, .hey {
     inset 0px 1px 0px rgba(255,255,255,0.2);
 }
 
-.btns button:hover, .hire-btn:hover, .email-btn:hover {
+.btn:hover {
   background: #2a2a2a;
   transform: translateY(-1px);
 }
 
-.or-text {
+.divider {
   color: #aaa;
   font-size: 0.85rem;
 }
 
-/* Flow diagram */
-.flow {
-  margin: 40px 0 0;
-  display: grid;
-  grid-template-columns: repeat(6, 180px);
-  grid-template-rows: 100px;
-  gap: 0 20px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 60px;
-  position: relative;
-  font-family: "Figtree", Figtree-Fallback, sans-serif;
+/* Social Links Section */
+.social-section {
+  margin: clamp(30px, 6vw, 40px) 0 clamp(15px, 3vw, 20px) 0;
+  padding: 0 clamp(3px, 1vw, 5px);
 }
 
-/* Flow Buttons */
-.flow-btn {
+.social-section .bio {
+  margin: clamp(12px, 3vw, 16px) 0 clamp(15px, 3vw, 20px) 0;
+  max-width: clamp(300px, 60vw, 360px);
+}
+
+.section-title {
+  font-size: 1.2rem;
+  color: #f1f1f1;
+  margin: 16px 0 0 0;
+  text-align: left;
+  font-family: "Figtree", sans-serif;
+}
+
+.social-grid {
+  display: flex;
+  gap: clamp(12px, 3vw, 16px);
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.social-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: clamp(6px, 1.5vw, 8px);
   white-space: nowrap;
-  border-radius: 8px;
+  border-radius: clamp(4px, 1vw, 6px);
   font-weight: 500;
   transition: all 0.2s ease;
   cursor: pointer;
   background: #1a1a1a;
   color: white;
   border: 1px solid #000;
-  padding: 4px 8px;
-  height: 32px;
-  width: 65%;
-  font-size: 12px;
-  font-family: "Figtree", Figtree-Fallback, sans-serif;
-    box-shadow: 
+  padding: clamp(6px, 1.5vw, 8px) clamp(12px, 3vw, 16px);
+  height: clamp(28px, 6vw, 32px);
+  font-size: clamp(10px, 2vw, 12px);
+  font-family: "Figtree", sans-serif;
+  box-shadow: 
     0px 32px 64px -16px rgba(0,0,0,0.3),
     0px 16px 32px -8px rgba(0,0,0,0.3),
     0px 8px 16px -4px rgba(0,0,0,0.24),
@@ -164,235 +200,470 @@ h1, .Azaki, .azaki, .hey {
     inset 0px 0px 0px 1px rgba(255,255,255,0.08),
     inset 0px 1px 0px rgba(255,255,255,0.2);
   position: relative;
-  z-index: 1;
 }
 
-.flow-btn:hover {
+
+
+.social-btn:hover {
   background: #2a2a2a;
   transform: translateY(-1px);
-}
-
-/* Horizontal connectors */
-.flow-btn::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: -21px;
-  width: 20px;
-  height: 2px;
-  background: repeating-linear-gradient(
-    to right,
-    #777 0 4px,
-    transparent 4px 8px
-  );
-  animation: move 2s linear infinite;
-}
-
-.flow-btn:last-child::after {
-  display: none;
 }
 
 /* Button Icons */
 .btn-icon {
-  width: 24px;
+  width: 15px;
   height: 20px;
-  gap: 8px;
   filter: brightness(0) invert(1);
 }
  
 /* Animations */
-@keyframes move {
-  from { background-position: 0 0; }
-  to { background-position: 16px 0; }
+@keyframes runningLine {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 0%; }
 }
 
-@keyframes movex {
-  from { background-position: 0 0; }
-  to { background-position: 0 16px; }
+@keyframes dotPulse {
+  0%, 100% { 
+    box-shadow: 0 0 6px rgba(85, 85, 85, 0.8), 0 0 12px rgba(85, 85, 85, 0.4);
+    background: #555;
+  }
+  50% { 
+    box-shadow: 0 0 12px rgba(119, 119, 119, 1), 0 0 24px rgba(119, 119, 119, 0.6);
+    background: #777;
+  }
 }
 
-@keyframes pulse {
-  0% { box-shadow: 0 0 15px rgba(0,255,174,0.5); }
-  50% { box-shadow: 0 0 30px rgba(0,255,174,0.9); }
-  100% { box-shadow: 0 0 15px rgba(0,255,174,0.5); }
+/* Timeline Section */
+.timeline-section {
+  margin: clamp(15px, 3vw, 20px) 0;
+  padding: 0 clamp(3px, 1vw, 5px);
 }
 
-/* Heatmap */
-.heatmap-container {
-  margin-top: 30px;
+.timeline-section .bio {
+  margin: 20px 0 20px 0;
+  max-width: 100vh;
+}
+
+.timeline {
+  position: relative;
   display: flex;
+  align-items: flex-start;
+  gap: clamp(10px, 4vw, 20px);
+  padding: clamp(5px, 4vw, 20px) 0;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 26px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #555 0%, #777 50%, #555 100%);
+  background-size: 200% 100%;
+  box-shadow: 0 0 8px rgba(85, 85, 85, 0.6), 0 0 16px rgba(85, 85, 85, 0.3);
+  animation: runningLine 3s linear infinite;
+  z-index: 0;
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(8px, 2vw, 12px);
+  flex: 1;
+  min-width: clamp(60px, 12vw, 80px);
+  text-align: center;
+}
+
+.timeline-item:last-child {
+  padding-right: 0;
+}
+
+.timeline-dot {
+  width: clamp(12px, 2.5vw, 15px);
+  height: clamp(12px, 2.5vw, 15px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #555;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  box-shadow: 0 0 6px rgba(85, 85, 85, 0.8), 0 0 12px rgba(85, 85, 85, 0.4);
+  animation: dotPulse 3s linear infinite;
+}
+
+.timeline-dot.completed {
+  background: #2a2a2a;
+  color: #000;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.dot-inner {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #1a1a1a;
+}
+
+.timeline-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Figtree", sans-serif;
+}
+
+.timeline-title {
+  color: #f1f1f1;
+  font-size: clamp(0.75rem, 2vw, 0.9rem);
+  font-weight: 600;
+  margin: 0 0 clamp(2px, 1vw, 4px) 0;
+  font-family: "Figtree", sans-serif;
+}
+
+.timeline-date {
+  color: #999;
+  font-size: clamp(0.65rem, 1.5vw, 0.75rem);
+  margin: 0;
+  font-family: "Figtree", sans-serif;
+}
+
+.timeline-arrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  top: 15px;
+  right: -170px;
+  color: #999;
+  font-family: "Figtree", sans-serif;
+  white-space: nowrap;
+}
+  
+.arrow-text {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+.projects-text{
+  font-size: 1.2rem;
+  color: #f1f1f1;
+  margin: 0 0 0 0;
+  text-align: left;
+}
+
+.arrow-icon {
+  font-size: 1.2rem;
+  color: #777;
+}
+
+/* Projects Section */
+.projects-div {
+  margin-top: clamp(30px, 6vw, 40px);
+  text-align: left;
+}
+
+.projects-div span {
+  color: #e0e0e0;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-family: "Figtree", sans-serif;
+  display: block;
+  margin-bottom: clamp(20px, 4vw, 30px);
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(15px, 3vw, 25px);
+  margin: 0;
   justify-content: center;
 }
 
-/* COMIT II Section */
-.comit-section {
-  margin-top: 40px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.comit-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #f1f1f1;
-  margin-bottom: 20px;
-  text-align: center;
-  letter-spacing: 0.1em;
-}
-
-.commits-container {
+.project-card {
+  width: 100%;
+  height: clamp(100px, 35vw, 250px);
+  border-radius: 0;
+  border: 3px dashed #333;
+  transition: all 0.3s ease;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-}
-
-.commit-item {
-  background: #1a1a1a;
-  border: 1px solid #333;
-  border-radius: 8px;
-  padding: 16px;
-  transition: all 0.2s ease;
+  background-size: cover;
+  background-position: center;
+  position: relative;
   box-shadow: 
+    0px 32px 64px -16px rgba(0,0,0,0.3),
+    0px 16px 32px -8px rgba(0,0,0,0.3),
+    0px 8px 16px -4px rgba(0,0,0,0.24),
     0px 4px 8px -2px rgba(0,0,0,0.24),
+    0px -8px 16px -1px rgba(0,0,0,0.16),
     0px 2px 4px -1px rgba(0,0,0,0.24),
-    inset 0px 0px 0px 1px rgba(255,255,255,0.05);
+    0px 0px 0px 1px #000,
+    inset 0px 0px 0px 1px rgba(255,255,255,0.08),
+    inset 0px 1px 0px rgba(255,255,255,0.2);
 }
 
-.commit-item:hover {
-  background: #222;
-  border-color: #444;
-  transform: translateY(-1px);
+/* Removed white edges */
+
+/* Remove duplicate project-info rule */
+.project-info {
+  padding: clamp(8px, 2vw, 12px);
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(26, 26, 26, 0.8);
 }
 
-.commit-hash {
-  font-family: 'Courier New', monospace;
-  font-size: 0.75rem;
-  color: #00ff7f;
+.project-card img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  border-bottom: 3px solid #333;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.project-card:hover img {
+  filter: grayscale(0%);
+  animation: blink 0.3s ease;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+.project-card:hover {
+  border: 3px dashed #333;
+  border-radius: 0;
+}
+
+.project-info h3 {
+  color: #f1f1f1;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
   font-weight: 600;
-  margin-bottom: 4px;
+  margin: 0 0 clamp(4px, 1vw, 6px) 0;
+  font-family: "Figtree", sans-serif;
 }
 
-.commit-message {
-  font-size: 0.9rem;
-  color: #e0e0e0;
-  font-weight: 500;
-  margin-bottom: 6px;
-  font-family: "Figtree", Figtree-Fallback, sans-serif;
-}
-
-.commit-date {
-  font-size: 0.75rem;
+.project-info p {
   color: #999;
-  font-family: "Figtree", Figtree-Fallback, sans-serif;
+  font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+  margin: 0;
+  font-family: "Figtree", sans-serif;
+  line-height: 1.4;
 }
+
+
+
+
 
 /* Responsive Design */
 @media (max-width: 1200px) {
-  .flow {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 60px);
-    gap: 20px;
-    max-width: 90vw;
+  .social-btn::after {
+    display: none;
   }
   
-  .flow-btn::after {
+  .hero-monkey {
+    right: clamp(50px, 15vw, 150px);
+    width: clamp(150px, 25vw, 250px);
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .social-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .projects-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(15px, 3vw, 20px);
+  }
+  
+  .timeline-arrow {
     display: none;
   }
 }
 
+/* Mobile Portrait */
 @media (max-width: 768px) {
   body {
-    padding: 20px;
+    padding: 15px 10px;
   }
   
-  .flow {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 50px);
-    gap: 15px;
-    margin-top: 40px;
+  .container {
+    padding: 0;
+    width: 100%;
   }
   
-  .flow-btn {
+  .hero-monkey {
+    display: none;
+  }
+  
+  .name-primary {
+    font-size: clamp(1.5rem, 8vw, 2rem);
+  }
+  
+  .bio, .bio-2, .bio3 {
+    font-size: clamp(0.8rem, 3.5vw, 0.9rem);
+    line-height: 1.5;
+  }
+  
+  .social-grid {
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .social-btn {
     height: 36px;
     font-size: 11px;
-    padding: 6px 8px;
+    padding: 4px 10px;
   }
   
-  .btns {
+  .actions {
     flex-direction: column;
     gap: 12px;
     align-items: stretch;
   }
   
-  .btns button {
+  .btn {
     width: 100%;
-    justify-content: center;
+    height: 44px;
+    font-size: 14px;
   }
   
-  .or-text {
-    text-align: center;
+  .timeline {
+    gap: 15px;
+    padding: 15px 0;
+    flex-wrap: wrap;
+  }
+  
+  .timeline-item {
+    min-width: 70px;
+    flex: 0 1 auto;
+  }
+  
+  .projects-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
 }
 
-@media (max-width: 768px) {
-  .comit-section {
-    margin-top: 30px;
-    padding: 0 20px;
+/* Small Mobile */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 5px;
   }
   
-  .commit-item {
-    padding: 12px;
+  .btn-icon {
+    width: 14px;
+    height: 16px;
   }
   
-  .commit-message {
+  .timeline-title {
+    font-size: 0.7rem;
+  }
+  
+  .timeline-date {
+    font-size: 0.6rem;
+  }
+  
+  .social-btn {
+    height: 32px;
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+  
+  .projects-div span {
     font-size: 0.85rem;
   }
 }
 
-@media (max-width: 480px) {
-  .flow {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(5, 45px);
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+  body {
+    padding: 10px 5px;
+  }
+  
+  .name-primary {
+    font-size: clamp(1.2rem, 10vw, 1.6rem);
+  }
+  
+  .bio, .bio-2, .bio3 {
+    font-size: 0.75rem;
+  }
+  
+  .social-grid {
+    gap: 6px;
+  }
+  
+  .social-btn {
+    height: 30px;
+    font-size: 9px;
+    padding: 2px 6px;
+  }
+  
+  .btn {
+    height: 40px;
+    font-size: 12px;
+  }
+  
+  .timeline-item {
+    min-width: 60px;
+  }
+}
+
+/* Landscape Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  body {
+    padding: 8px 12px;
+  }
+  
+  .hero {
+    margin-bottom: 12px;
+  }
+  
+  .name-primary {
+    font-size: clamp(1.2rem, 5vh, 1.6rem);
+  }
+  
+  .bio, .bio-2, .bio3 {
+    font-size: clamp(0.7rem, 2.5vh, 0.8rem);
+    margin: 6px 0 0 0;
+  }
+  
+  .actions {
+    margin: 12px 0;
+    flex-direction: row;
+  }
+  
+  .social-grid {
+    gap: 6px;
+  }
+  
+  .social-btn {
+    height: 28px;
+    font-size: 9px;
+    padding: 3px 6px;
+  }
+  
+  .timeline {
+    gap: 12px;
+    padding: 8px 0;
+  }
+  
+  .projects-container {
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
-  }
-  
-  .flow-btn {
-    height: 34px;
-    font-size: 10px;
-  }
-  
-  .btn-icon {
-    width: 18px;
-    height: 16px;
-  }
-  
-  .para {
-    font-size: 0.8rem;
-  }
-  
-  .comit-section {
-    margin-top: 25px;
-    padding: 0 15px;
-  }
-  
-  .comit-title {
-    font-size: 1rem;
-  }
-  
-  .commit-item {
-    padding: 10px;
-  }
-  
-  .commit-hash {
-    font-size: 0.7rem;
-  }
-  
-  .commit-message {
-    font-size: 0.8rem;
-  }
-  
-  .commit-date {
-    font-size: 0.7rem;
   }
 }
